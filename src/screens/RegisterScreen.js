@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {TextInput, Button, Text} from '@react-native-material/core';
 import {useDispatch, useSelector} from 'react-redux';
-import {register} from '../store/slices/authSlice';
+import {register} from '../store/slices/auth.slice';
 
 const RegisterScreen = () => {
   const [email, setEmail] = useState('');

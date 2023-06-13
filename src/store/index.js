@@ -13,8 +13,8 @@ import {
 
 import {topStoriesApi} from './slices/topStories.slice';
 import {articleSearchApi} from './slices/articleSearch.slice';
-import recentSearchesReducer from './slices/recentSearches.slices';
-import authReducer from './slices/authSlice';
+import recentSearchesReducer from './slices/recentSearches.slice';
+import authReducer from './slices/auth.slice';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const persistConfig = {

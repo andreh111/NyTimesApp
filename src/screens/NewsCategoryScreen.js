@@ -10,7 +10,7 @@ import {
 } from '@react-native-material/core';
 import {useNavigation} from '@react-navigation/native';
 import {useDispatch, useSelector} from 'react-redux';
-import {addRecentSearch} from '../store/slices/recentSearches.slices';
+import {addRecentSearch} from '../store/slices/recentSearches.slice';
 
 const NewsCategoryScreen = () => {
   const navigation = useNavigation();

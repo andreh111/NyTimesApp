@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {TextInput, Button, Text, Pressable} from '@react-native-material/core';
 import {useDispatch, useSelector} from 'react-redux';
-import {login} from '../store/slices/authSlice';
+import {login} from '../store/slices/auth.slice';
 import {useNavigation} from '@react-navigation/native';
 
 const LoginScreen = () => {
