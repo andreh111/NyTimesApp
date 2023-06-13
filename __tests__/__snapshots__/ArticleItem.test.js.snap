@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleDetailScreen renders correctly 1`] = `
+<View>
+  <Image
+    defaultSource={
+      {
+        "testUri": "../../../src/assets/nytimes.png",
+      }
+    }
+    source={
+      {
+        "uri": "https://example.com/image.jpg",
+      }
+    }
+    style={
+      {
+        "height": 300,
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "margin": 10,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontSize": 16,
+            "letterSpacing": 0.5,
+          },
+          {
+            "color": "#000000",
+          },
+          {
+            "fontSize": 20,
+            "fontWeight": "bold",
+            "marginBottom": 10,
+          },
+        ]
+      }
+    >
+      Test Title
+    </Text>
+    <Text
+      style={
+        [
+          {
+            "fontSize": 16,
+            "letterSpacing": 0.5,
+          },
+          {
+            "color": "#000000",
+          },
+          undefined,
+        ]
+      }
+    >
+      Test Abstract
+    </Text>
+    <Text
+      style={
+        [
+          {
+            "fontSize": 16,
+            "letterSpacing": 0.5,
+          },
+          {
+            "color": "#000000",
+          },
+          {
+            "fontSize": 12,
+            "marginTop": 10,
+          },
+        ]
+      }
+    >
+      2022-01-01
+    </Text>
+  </View>
+</View>
+`;

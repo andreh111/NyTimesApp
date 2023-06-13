@@ -14,7 +14,7 @@ const ArticleListContainer = ({
 }) => {
   const navigation = useNavigation();
 
-  const keyExtractor = ({title}) => title;
+  const keyExtractor = ({abstract}) => abstract;
 
   const onViewArticleDetails =
     ({title, abstract, published_date, multimedia, url}) =>
@@ -31,6 +31,7 @@ const ArticleListContainer = ({
     item: {title, abstract, published_date, multimedia, url},
   }) => (
     <ArticleItem
+      key={abstract}
       onPress={onViewArticleDetails({
         title,
         abstract,
