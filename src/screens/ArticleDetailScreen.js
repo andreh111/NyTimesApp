@@ -5,14 +5,18 @@ import {useRoute} from '@react-navigation/native';
 
 const ArticleDetailScreen = () => {
   const {
-    params: {title, abstract, published_date, multimedia},
+    params: {title, abstract, published_date, multimedia, isSearching},
   } = useRoute();
 
   return (
     <View>
       <Image
         style={styles.img}
-        source={{uri: multimedia?.[0]?.url}}
+        source={{
+          uri: isSearching
+            ? `https://static01.nyt.com/${multimedia[0]?.legacy?.xlarge}`
+            : multimedia?.[0]?.url,
+        }}
         defaultSource={require('../assets/nytimes.png')}
       />
       <View style={styles.space}>

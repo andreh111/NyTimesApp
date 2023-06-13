@@ -24,6 +24,7 @@ const ArticleListContainer = ({
         published_date,
         multimedia,
         url,
+        isSearching,
       });
 
   const renderItem = ({
