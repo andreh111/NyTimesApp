@@ -3,7 +3,6 @@ import {useNavigation} from '@react-navigation/native';
 import {FlatList} from 'react-native';
 
 import ArticleItem from './ArticleItem';
-import ListEmpty from './ListEmpty';
 import Loader from './Loader';
 
 const ArticleListContainer = ({
@@ -48,14 +47,11 @@ const ArticleListContainer = ({
     />
   );
 
-  console.log(isLoadingItems);
-
   return (
     <FlatList
       keyExtractor={keyExtractor}
       data={data}
       renderItem={renderItem}
-      ListEmptyComponent={!isLoadingItems && data.length === 0 && <ListEmpty />}
       ListFooterComponent={isLoadingItems && <Loader />}
       onEndReached={onEndReached}
     />
