@@ -1,5 +1,5 @@
 import {Pressable} from '@react-native-material/core';
-import React from 'react';
+import React, {memo} from 'react';
 import {Image, Text, StyleSheet, Dimensions} from 'react-native';
 
 const ArticleItem = ({
@@ -42,4 +42,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ArticleItem;
+export default memo(
+  ArticleItem,
+  (prevProps, newProps) =>
+    prevProps.abstract === newProps.abstract &&
+    prevProps.multimediaUrl === newProps.multimediaUrl &&
+    prevProps.published_date === newProps.published_date,
+);

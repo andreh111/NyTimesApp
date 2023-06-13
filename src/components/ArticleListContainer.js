@@ -48,13 +48,15 @@ const ArticleListContainer = ({
     />
   );
 
+  console.log(isLoadingItems);
+
   return (
     <FlatList
       keyExtractor={keyExtractor}
       data={data}
       renderItem={renderItem}
       ListEmptyComponent={!isLoadingItems && data.length === 0 && <ListEmpty />}
-      ListFooterComponent={<Loader />}
+      ListFooterComponent={isLoadingItems && <Loader />}
       onEndReached={onEndReached}
     />
   );

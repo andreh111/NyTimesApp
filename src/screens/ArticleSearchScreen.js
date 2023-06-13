@@ -16,7 +16,7 @@ const ArticleSearchScreen = () => {
 
   const [page, setPage] = useState(1);
 
-  const {data, error, isLoading} = useGetSearchArticlesQuery(
+  const {data, error, isFetching} = useGetSearchArticlesQuery(
     {query, page},
     {
       selectFromResult: ({data: articlesData, ...otherParams}) => ({
@@ -34,7 +34,7 @@ const ArticleSearchScreen = () => {
         data={data}
         isSearching
         onEndReached={() => setPage(page + 1)}
-        isLoadingItems={isLoading}
+        isLoadingItems={isFetching}
       />
       {error && <Text>{error.message}</Text>}
     </>
