@@ -11,6 +11,7 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import {useDispatch, useSelector} from 'react-redux';
 import {addRecentSearch} from '../store/slices/recentSearches.slice';
+import {logout} from '../store/slices/auth.slice';
 
 const NewsCategoryScreen = () => {
   const navigation = useNavigation();
@@ -33,6 +34,8 @@ const NewsCategoryScreen = () => {
 
   const onRecentSearchPress = search => () =>
     navigation.navigate('ArticleSearch', {query: search});
+
+  const onLogout = () => dispatch(logout());
 
   return (
     <>
@@ -73,6 +76,9 @@ const NewsCategoryScreen = () => {
             );
           })}
         </HStack>
+        <Pressable onPress={onLogout} style={styles.logout}>
+          <Text>Logout</Text>
+        </Pressable>
       </View>
     </>
   );
@@ -102,6 +108,10 @@ const styles = StyleSheet.create({
   searches: {flexWrap: 'wrap'},
   white: {
     color: '#ffffff',
+  },
+  logout: {
+    marginTop: 200,
+    alignSelf: 'center',
   },
 });
 
