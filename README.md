@@ -19,5 +19,6 @@
  
 ### Run unit tests
 
-To run the unit tests run the command: `npm run test`
+1) To run the unit tests run the command: `npm run test`
+2) To run the code coverage run the command: `npm run test --coverage`, a folder will be created called `covarage/` where you can check all the tests coverage by browsing `coverage/index.html` file 
 
