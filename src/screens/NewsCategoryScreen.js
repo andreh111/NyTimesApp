@@ -10,6 +10,7 @@ import {
 } from '@react-native-material/core';
 import {useNavigation} from '@react-navigation/native';
 import {useDispatch, useSelector} from 'react-redux';
+
 import {addRecentSearch} from '../store/slices/recentSearches.slice';
 import {logout} from '../store/slices/auth.slice';
 

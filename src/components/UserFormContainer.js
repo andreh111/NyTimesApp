@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Button, Text, TextInput} from '@react-native-material/core';
 import {StyleSheet, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
+
 import {login, register} from '../store/slices/auth.slice';
 
 const UserFormContainer = ({mode, actionText}) => {

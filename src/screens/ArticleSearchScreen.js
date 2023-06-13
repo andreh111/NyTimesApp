@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useRoute} from '@react-navigation/native';
+import {Text} from '@react-native-material/core';
 
 import ArticleListContainer from '../components/ArticleListContainer';
 import {
@@ -7,7 +8,6 @@ import {
   articlesSelector,
   useGetSearchArticlesQuery,
 } from '../store/slices/articleSearch.slice';
-import {Text} from '@react-native-material/core';
 
 const ArticleSearchScreen = () => {
   const {
