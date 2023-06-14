@@ -1,5 +1,5 @@
 import {Pressable} from '@react-native-material/core';
-import React, {memo} from 'react';
+import React, {useState, memo} from 'react';
 import {Image, Text, StyleSheet, Dimensions} from 'react-native';
 
 const ArticleItem = ({
@@ -8,20 +8,31 @@ const ArticleItem = ({
   published_date,
   multimediaUrl,
   onPress,
-}) =>
-  abstract &&
-  multimediaUrl && (
-    <Pressable onPress={onPress} style={styles.container}>
-      <Image
-        style={styles.image}
-        source={{uri: multimediaUrl}}
-        defaultSource={require('../assets/nytimes.png')}
-      />
-      {title && <Text style={styles.text}>{title}</Text>}
-      {abstract && <Text style={styles.text}>{abstract}</Text>}
-      {published_date && <Text style={styles.text}>{published_date}</Text>}
-    </Pressable>
+}) => {
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
+  return (
+    abstract &&
+    multimediaUrl && (
+      <Pressable onPress={onPress} style={styles.container}>
+        <Image
+          style={styles.image}
+          source={
+            imageError ? require('../assets/nytimes.png') : {uri: multimediaUrl}
+          }
+          onError={handleImageError}
+        />
+        {title && <Text style={styles.text}>{title}</Text>}
+        {abstract && <Text style={styles.text}>{abstract}</Text>}
+        {published_date && <Text style={styles.text}>{published_date}</Text>}
+      </Pressable>
+    )
   );
+};
 
 const styles = StyleSheet.create({
   container: {
